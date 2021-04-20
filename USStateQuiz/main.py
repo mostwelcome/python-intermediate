@@ -32,9 +32,7 @@ while len(gussed_list) <50:
         t = turtle.Turtle()
         t.hideturtle()
         t.penup()
-        x = int(state_data.x)
-        y = int(state_data.y)
-        t.goto(x,y)
+        t.goto(int(state_data.x),int(state_data.y))
         t.write(state_data.state.item())
         gussed_list.append(state)
 
