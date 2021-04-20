@@ -13,4 +13,5 @@ squirrel_dict = {
 
 squirrel_dataframe = pandas.DataFrame(squirrel_dict)
 
+#saving the final result to csv
 squirrel_dataframe.to_csv('squirrel_count.csv')
