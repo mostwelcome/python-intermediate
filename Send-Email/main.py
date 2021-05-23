@@ -45,14 +45,14 @@ while True:
     time.sleep(60)
     if is_iss_overhead and is_night_time:
         print('HEre')
-        connection = smtplib.SMTP("smtp.gmail.com",587)
-        connection.starttls()
-        connection.login(MY_EMAIL,MY_PASSWORD)
-        connection.sendmail(
-            from_addr=MY_EMAIL,
-            to_addrs=MY_EMAIL,
-            msg ="Subject: look up\n\nISS is above ur head"
-        )
+        with smtplib.SMTP("smtp.gmail.com",587) as connection:
+            connection.starttls()
+            connection.login(MY_EMAIL,MY_PASSWORD)
+            connection.sendmail(
+                from_addr=MY_EMAIL,
+                to_addrs=MY_EMAIL,
+                msg ="Subject: look up\n\nISS is above ur head"
+            )
 
 
 
