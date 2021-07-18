@@ -2,13 +2,16 @@ from flask import Flask
 
 app = Flask(__name__)
 
+
 def make_bold(function):
     def wrapper_function():
         text = function()
-        
+
+
 @app.route("/")
 def hello_world():
     return "<p>Hello, World!</p>"
+
 
 @app.route("/bye")
 def bye_world():
@@ -19,6 +22,7 @@ def bye_world():
 def greet(name):
     return f'Hi {name}!'
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     # app in debug mode to reload
     app.run(debug=True)
