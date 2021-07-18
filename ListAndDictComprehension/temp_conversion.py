@@ -8,9 +8,6 @@ weather_c = {
     "Sunday": 24,
 }
 
-weather_f = {day:(temp*9/5)+32 for (day,temp) in weather_c.items() }
-
+weather_f = {day: (temp * 9 / 5) + 32 for (day, temp) in weather_c.items()}
 
 print(weather_f)
-
-

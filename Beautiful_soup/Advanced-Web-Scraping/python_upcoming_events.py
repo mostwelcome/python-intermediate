@@ -1,7 +1,8 @@
 from selenium import webdriver
+
 CHROME_DRIVER_PATH = "D:\chromedriver_win32\chromedriver"
 
-driver =  webdriver.Chrome(executable_path = CHROME_DRIVER_PATH)
+driver = webdriver.Chrome(executable_path=CHROME_DRIVER_PATH)
 
 driver.get('https://www.python.org/')
 
@@ -14,7 +15,7 @@ for time in event_times:
 for names in event_names:
     print(names.text)
 
-event_dict = {event_times[i].text:event_names[i].text for i in range(len(event_times))}
+event_dict = {event_times[i].text: event_names[i].text for i in range(len(event_times))}
 
 print(event_dict)
 

@@ -13,9 +13,9 @@
     Dictionary   
 '''
 
-num = 9+8j
+num = 9 + 8j
 
 print(type(num))
 
-a,b = 5,6
-print(a,b)
+a, b = 5, 6
+print(a, b)

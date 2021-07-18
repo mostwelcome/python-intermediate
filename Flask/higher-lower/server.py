@@ -1,5 +1,6 @@
-from flask import Flask
 import random
+
+from flask import Flask
 
 random_number = random.randint(0, 9)
 print(random_number)

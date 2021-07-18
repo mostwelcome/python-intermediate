@@ -7,5 +7,5 @@ print(data)
 latitude = data['iss_position']['latitude']
 longitude = data['iss_position']['longitude']
 
-position = (latitude,longitude)
+position = (latitude, longitude)
 print(position)

@@ -4,14 +4,14 @@
 
 try:
     file = open('a.txt')
-    my_dict = {'key':'value'}
+    my_dict = {'key': 'value'}
     value = my_dict["key"]
 except FileNotFoundError:
     print('There was an error')
-    open('a.txt','w')
+    open('a.txt', 'w')
 except KeyError as error_message:
     print(f'The key {error_message} does not exist')
-    my_dict["doesn't exist"]='somevalue'
+    my_dict["doesn't exist"] = 'somevalue'
     print(my_dict)
 else:
     content = file.read()
@@ -19,18 +19,18 @@ else:
 finally:
     print('file is closed')
     file.close()
-    #to raise an exception
+    # to raise an exception
     # raise FileNotFoundError("I made up this")
 
-#KeyError:
+# KeyError:
 
 # my_dict = {'key':'value'}
 # value = my_dict["doesn't exist"]
 
-#Index error:IndexError: list index out of range
+# Index error:IndexError: list index out of range
 # my_list[4]
 
-#Type error:TypeError: can only concatenate str (not "int") to str
+# Type error:TypeError: can only concatenate str (not "int") to str
 
 # text = 'abc'
 # print(text+5)
