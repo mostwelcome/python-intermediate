@@ -1,8 +1,8 @@
 from selenium import webdriver
-from selenium.webdriver import ActionChains
+
 CHROME_DRIVER_PATH = "D:\chromedriver_win32\chromedriver"
 
-driver =  webdriver.Chrome(executable_path = CHROME_DRIVER_PATH)
+driver = webdriver.Chrome(executable_path=CHROME_DRIVER_PATH)
 
 driver.get('http://secure-retreat-92358.herokuapp.com/')
 first_name = driver.find_element_by_name('fName')

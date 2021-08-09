@@ -3,6 +3,7 @@
 #     print(lines)
 
 import csv
+
 all_temp = []
 
 with open('weather_data.csv') as file:
@@ -10,7 +11,5 @@ with open('weather_data.csv') as file:
     for row in data:
         if row[1].isnumeric():
             all_temp.append(row[1])
-
-
 
 print(all_temp)

@@ -1,8 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+
 CHROME_DRIVER_PATH = "D:\chromedriver_win32\chromedriver"
 
-driver =  webdriver.Chrome(executable_path = CHROME_DRIVER_PATH)
+driver = webdriver.Chrome(executable_path=CHROME_DRIVER_PATH)
 
 driver.get('https://en.wikipedia.org/wiki/Main_Page')
 article_count = driver.find_element_by_css_selector('#articlecount a')

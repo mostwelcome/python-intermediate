@@ -1,14 +1,14 @@
 {
-    "abc": {
-        "email": "abc@gmail.com",
-        "password": "Ixqcm1wNP*l&s6"
-    },
-    "tua": {
-        "email": "abc@gmail.com",
-        "password": "O4neog)J39%Tp"
-    },
-    "Facebook": {
-        "email": "abc@gmail.com",
-        "password": "2Te*#94Te(lUAI)"
-    }
+  "abc": {
+    "email": "abc@gmail.com",
+    "password": "Ixqcm1wNP*l&s6"
+  },
+  "tua": {
+    "email": "abc@gmail.com",
+    "password": "O4neog)J39%Tp"
+  },
+  "Facebook": {
+    "email": "abc@gmail.com",
+    "password": "2Te*#94Te(lUAI)"
+  }
 }
