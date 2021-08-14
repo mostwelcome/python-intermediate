@@ -1,3 +1,4 @@
+from tkinter import *
 import json
 import random
 from tkinter import messagebox
@@ -29,7 +30,7 @@ def search_password():
 def generate_password():
     if len(password_entry.get()) != 0:
         password_entry.delete(0, END)
-    # Password Generator 
+    # Password Generator
     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
                'v', 'w', 'x', 'y',
                'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
@@ -45,9 +46,12 @@ def generate_password():
     # for letter in range(1, nr_letters+1):
     #     password_list.append(random.choice(letters))
     print(nr_letters)
-    password_list = [random.choice(letters) for letter in range(1, nr_letters + 1)]
-    password_list_numbers = [random.choice(numbers) for number in range(1, nr_numbers + 1)]
-    password_list_symbols = [random.choice(symbols) for symbol in range(1, nr_symbols + 1)]
+    password_list = [random.choice(letters)
+                     for letter in range(1, nr_letters + 1)]
+    password_list_numbers = [random.choice(
+        numbers) for number in range(1, nr_numbers + 1)]
+    password_list_symbols = [random.choice(
+        symbols) for symbol in range(1, nr_symbols + 1)]
 
     password_list.extend(password_list_symbols)
     password_list.extend(password_list_numbers)
@@ -68,7 +72,8 @@ def save():
         'password': password
     }}
     if len(website) == 0 or email == 0 or password == 0:
-        messagebox.showinfo(message='Oops !! Please make sure none of the field is empty')
+        messagebox.showinfo(
+            message='Oops !! Please make sure none of the field is empty')
     else:
         is_ok = messagebox.askokcancel(title=website,
                                        message=f'These are the details entered :\nEmail : {email}\nPassword :{password}\nIs it okay to save?\n')
@@ -100,8 +105,6 @@ def save():
 # print(value, 'is', 'even' if value % 2 == 0 else 'odd')
 
 
-from tkinter import *
-
 window = Tk()
 window.title('Password Manager')
 window.config(padx=50, pady=50)
@@ -125,13 +128,14 @@ website_entry.grid(row=1, column=1, columnspan=2)
 website_entry.focus()
 email_entry = Entry(width=40)
 email_entry.grid(row=2, column=1, columnspan=2)
-# default email 
+# default email
 email_entry.insert(0, 'abc@gmail.com')
 password_entry = Entry(width=40)
 password_entry.grid(row=3, column=1, columnspan=2)
 
 # Buttons
-generate_password_button = Button(text='Generate Password', command=generate_password)
+generate_password_button = Button(
+    text='Generate Password', command=generate_password)
 generate_password_button.grid(row=4, column=1, columnspan=2)
 search_button = Button(text='Search Password', command=search_password)
 search_button.grid(row=5, column=1, columnspan=2)

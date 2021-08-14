@@ -1,3 +1,5 @@
+import pandas
+
 student_dict = {
     "student": ["Angela", "James", "Lily"],
     "score": [56, 76, 98]
@@ -7,8 +9,6 @@ student_dict = {
 for (key, value) in student_dict.items():
     # Access key and value
     pass
-
-import pandas
 
 student_data_frame = pandas.DataFrame(student_dict)
 
@@ -31,7 +31,7 @@ def generate_phonetic():
     name = list(input('Enter a name :- '))
     try:
         phonetic_code_words = [phonetic_dict[letter.upper()] for letter in name]
-    except:
+    except Exception:
         print('Sorry,Only letters and alphabet please')
         generate_phonetic()
     else:
