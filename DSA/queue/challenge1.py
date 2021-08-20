@@ -15,6 +15,8 @@ This problem is a producer,consumer problem where place_order thread is producin
 thread is consuming the food orders
 '''
 from collections import deque
+import threading
+import time
 
 
 class Queue():
@@ -25,11 +27,13 @@ class Queue():
         return self.queue.appendleft(item)
 
     def dequeue(self):
+        if self.size() == 0:
+            return
         return self.queue.pop()
 
     def size(self):
         return len(self.queue)
-    
+
     def place_order(self):
         pass
 
@@ -39,11 +43,30 @@ class Queue():
 
 queue = Queue()
 
-# queue.enqueue(5)
-# queue.enqueue(6)
-# queue.enqueue(7)
-# queue.enqueue(8)
 
-# print(queue.queue)
-# print(queue.dequeue())
-# print(queue.queue)
+def place_order(order_items):
+    for item in order_items:
+        queue.enqueue(item)
+        print(f'Order placed for: {item}')
+        time.sleep(0.5)
+
+
+def serve_order():
+    time.sleep(1)
+    while True:
+        item = queue.dequeue()
+        if item is None:
+            print('All order served')
+            break
+        else:
+            print(f'Order served : {item}')
+            time.sleep(2)
+
+
+if __name__ == '__main__':
+    order_items = ['pizza', 'samosa', 'pasta', 'biryani', 'burger']
+    t1 = threading.Thread(target=place_order, args=(order_items,))
+    t2 = threading.Thread(target=serve_order)
+
+    t1.start()
+    t2.start()
