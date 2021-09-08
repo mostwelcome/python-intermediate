@@ -27,14 +27,12 @@ class Queue():
 
     def dequeue(self):
         if self.size() == 0:
-            print('Queue is empty')
             return
-        
         return self.queue.pop()
 
     def size(self):
         return len(self.queue)
-    
+
     def place_order(self):
         pass
 
@@ -44,27 +42,30 @@ class Queue():
 
 queue = Queue()
 
-def place_orders(orders):
-    for order in orders:
-        print("Placing order for:",order)
-        queue.enqueue(order)
+
+def place_order(order_items):
+    for item in order_items:
+        queue.enqueue(item)
+        print(f'Order placed for: {item}')
         time.sleep(0.5)
 
 
-def serve_orders():
+def serve_order():
     time.sleep(1)
     while True:
-        order = queue.dequeue()
-        if order is None:
+        item = queue.dequeue()
+        if item is None:
+            print('All order served')
             break
-        print("Now serving: ",order)
-        time.sleep(2)
+        else:
+            print(f'Order served : {item}')
+            time.sleep(2)
 
 
 if __name__ == '__main__':
-    orders = ['pizza','samosa','pasta','biryani','burger']
-    t1 = threading.Thread(target=place_orders, args=(orders,))
-    t2 = threading.Thread(target=serve_orders)
+    order_items = ['pizza', 'samosa', 'pasta', 'biryani', 'burger']
+    t1 = threading.Thread(target=place_order, args=(order_items,))
+    t2 = threading.Thread(target=serve_order)
 
     t1.start()
     t2.start()
