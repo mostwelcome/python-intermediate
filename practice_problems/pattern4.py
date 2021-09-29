@@ -1,0 +1,3 @@
+"""
+pascals triangle
+"""
