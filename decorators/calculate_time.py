@@ -6,7 +6,7 @@ def time_it(func):
         start = perf_counter()
         result = func(*args, **kwargs)
         end = perf_counter()
-        print(func.__name__ + 'took ' + str((end - start) * 1000) + ' mil sec.')
+        print(func.__name__ + ' took ' + str((end - start) * 1000) + ' mil sec.')
         return result
 
     return wrapper
