@@ -6,12 +6,29 @@
 55555
 """
 
+# def print_pattern1(n):
+#     for i in range(n+1):
+#         for j in range(i):
+#             print(i, end="")
+#         print("\n")
+#
+#
+# print_pattern1(8)
 
-def print_pattern1(n):
-    for i in range(1, n + 1):
+
+'''
+0
+0 1
+0 1 2
+0 1 2 3
+'''
+
+
+def pattern2(n):
+    for i in range(n+1):
         for j in range(i):
-            print(i, end='')
-        print('\n')
+            print(j, end=" ")
+        print("\n")
 
 
-print_pattern1(9)
+pattern2(5)
