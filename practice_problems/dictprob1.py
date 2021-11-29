@@ -4,7 +4,7 @@ Increment all the dict values by number 'n'
 
 
 def increment_dict(d, n):
-    d = {key: value+n for (key, value) in d.items()}
+    d = {key: value + n for (key, value) in d.items()}
     print(d)
 
 
