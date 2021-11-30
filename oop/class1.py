@@ -2,7 +2,7 @@ class Test:
     def __init__(self, name):
         self.name = name
 
-    def __init__(self, title, name):
+    def __init__(self, title, name=None):
         self.title = title
         self.name = name
 
