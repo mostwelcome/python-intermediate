@@ -6,7 +6,7 @@ import csv
 
 all_temp = []
 
-with open('weather_data.csv') as file:
+with open('../weather_data.csv') as file:
     data = csv.reader(file)
     for row in data:
         if row[1].isnumeric():
